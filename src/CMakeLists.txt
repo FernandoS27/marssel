@@ -1,0 +1,101 @@
+add_library(kepler3d
+    Architecture/Command.h
+    Architecture/Command.cpp
+    Architecture/Engine.h
+    Architecture/MasterWorker.h
+    Architecture/MasterWorker.cpp
+    Architecture/Postulationem.h
+    Architecture/Postulationem.cpp
+    Architecture/Requirement.cpp
+    Architecture/Requirement.h
+    Architecture/Scheduler.h
+    Architecture/Scheduler.cpp
+    Architecture/Worker.h
+    Architecture/Worker.cpp
+    Architecture/Architecture.h
+    Common/AlignmentAllocator.h
+    Common/MemoryPool.h
+    Common/ThreadUtils.cpp
+    Common/ThreadUtils.h
+    Common/unordered_vector.h
+    PhysicsEngine/Actions/Broadphase.h
+    PhysicsEngine/Actions/BroadphaseNaive.h
+    PhysicsEngine/Actions/PrepareConstraints.h
+    PhysicsEngine/Actions/ConstraintResolution.h
+    PhysicsEngine/Actions/ForceValidator.h
+    PhysicsEngine/Actions/ComputeManifolds.h
+    PhysicsEngine/Actions/Integrator.h
+    PhysicsEngine/Actions/Narrowphase.h
+    PhysicsEngine/Actions/QueryNaiveBroadcheck.h
+    PhysicsEngine/Actions/QueryBroadcheck.h
+    PhysicsEngine/Actions/QueryNarrowcheck.h
+    PhysicsEngine/Actions/UpdateObjects.h
+    PhysicsEngine/Collision/Collider.h
+    PhysicsEngine/Collision/MPRCollider.cpp
+    PhysicsEngine/Collision/MPRCollider.h
+    PhysicsEngine/Dynamics/Constraint.cpp
+    PhysicsEngine/Dynamics/Constraint.h
+    PhysicsEngine/Dynamics/ConstraintsManager.h
+    PhysicsEngine/Dynamics/ContactConstraint.h
+    PhysicsEngine/Dynamics/FrictionConstraint.h
+    PhysicsEngine/Model.h
+    PhysicsEngine/Physics/Force.h
+    PhysicsEngine/Physics/Manifold.h
+    PhysicsEngine/Physics/Material.h
+    PhysicsEngine/Physics/PhysicalObject.cpp
+    PhysicsEngine/Physics/PhysicalObject.h
+    PhysicsEngine/PhysicsEngine.cpp
+    PhysicsEngine/PhysicsEngine.h
+    PhysicsEngine/Shapes/AABB.h
+    PhysicsEngine/Shapes/Box.cpp
+    PhysicsEngine/Shapes/Box.h
+    PhysicsEngine/Shapes/Capsule.cpp
+    PhysicsEngine/Shapes/Capsule.h
+    PhysicsEngine/Shapes/ConvexHull.cpp
+    PhysicsEngine/Shapes/ConvexHull.h
+    PhysicsEngine/Shapes/Cylinder.cpp
+    PhysicsEngine/Shapes/Cylinder.h
+    PhysicsEngine/Shapes/Shape.h
+    PhysicsEngine/Shapes/ShapesManager.h
+    PhysicsEngine/Shapes/Sphere.cpp
+    PhysicsEngine/Shapes/Sphere.h
+    PhysicsEngine/Structures/BHTree.h
+    Types/Types.h
+    Types/BaseTypes.h
+    Types/Definitions.h
+    Types/FixedPoint.h
+    Types/Math.h
+    Types/Matrix33.cpp
+    Types/Matrix33.h
+    Types/Matrix44.cpp
+    Types/Matrix44.h
+    Types/Quaternion.cpp
+    Types/Quaternion.h
+    Types/Real.h
+    Types/Transform.h
+    Types/Vector3.cpp
+    Types/Vector3.h
+    Types/Vector4.cpp
+    Types/Vector4.h
+)
+
+#[[
+PhysicsEngine/Physics/Force.h
+PhysicsEngine/Physics/Gravity.h
+PhysicsEngine/Physics/PhysicalObject.h
+PhysicsEngine/ForceValidator.h
+PhysicsEngine/Integrator.h
+PhysicsEngine/Shapes/Box.h
+PhysicsEngine/Shapes/Shape.h
+PhysicsEngine/Shapes/Sphere.h
+
+Types/Matrix3.cpp
+]]
+
+include(CreateDirectoryGroups)
+create_target_directory_groups(kepler3d)
+
+#target_include_directories(kepler3d PUBLIC ../include PRIVATE .)
+target_include_directories(kepler3d PUBLIC .)
+
+target_compile_options(kepler3d PRIVATE ${KEPLER3D_CXX_FLAGS})

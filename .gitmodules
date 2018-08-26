@@ -1,0 +1,8 @@
+[submodule "externals/nihstro"]
+	path = externals/nihstro
+	url = https://github.com/neobrain/nihstro.git
+	branch = master
+[submodule "externals/SPIRV-Tools"]
+	path = externals/SPIRV-Tools
+	url = https://github.com/KhronosGroup/SPIRV-Tools.git
+	branch = master
